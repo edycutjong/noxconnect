@@ -33,7 +33,7 @@
     "ci": "npm run lint && npm run typecheck && npm run test:all"
   },
   "dependencies": {
-    "@iexec-nox/handle": "^0.1.0-beta.13",
+    "@iexec-nox/handle": "^0.1.0-beta.15",
     "dotenv": "^17.4.2",
     "ethers": "^6.17.0"
   },
