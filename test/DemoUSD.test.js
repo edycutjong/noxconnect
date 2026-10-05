@@ -3,7 +3,7 @@ const { ethers } = require("hardhat");
 
 // Unit tests for the underlying ERC-20 (runs on the local Hardhat network — no Nox/TEE needed).
 // The confidential cUSD + escrow paths require the live NoxCompute precompile and are proven by the
-// live `npm run e2e` on Sepolia; @noxsend/core carries 122 pure unit tests (`npm test`).
+// live `npm run e2e` on Sepolia; @noxconnect/core carries 122 pure unit tests (`npm test`).
 describe("DemoUSD", function () {
   let demo, owner, alice;
 

@@ -1,6 +1,6 @@
-// @noxsend/core — add private-send to any dApp in ~10 lines.
+// @noxconnect/core — add private-send to any dApp in ~10 lines.
 // Pure helpers (amounts, handles, secret, acl, config) are framework-agnostic and fully unit-tested;
-// NoxSendClient is the ethers-based high-level surface used by the CLI and scripts.
+// NoxConnectClient is the ethers-based high-level surface used by the CLI and scripts.
 export * from './amounts.js';
 export * from './handles.js';
 export * from './secret.js';

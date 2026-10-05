@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { parseClaimLink } from '@noxsend/core';
+import { parseClaimLink } from '@noxconnect/core';
 import { useNox, explorerTx } from '@/hooks/useNox';
 import { ConnectButton } from '@/components/ConnectButton';
 import { LockIcon } from '@/components/SealedAmount';

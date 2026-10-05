@@ -1,4 +1,4 @@
-// Shared helpers for the standalone (ESM) NoxSend scripts.
+// Shared helpers for the standalone (ESM) NoxConnect scripts.
 // Contracts are compiled by Hardhat; we load the artifacts and talk to live Sepolia via ethers.
 import 'dotenv/config';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';

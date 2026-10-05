@@ -1,4 +1,4 @@
-// NoxSend end-to-end proof on LIVE Ethereum Sepolia. Zero mock data. Re-runnable (delta asserts).
+// NoxConnect end-to-end proof on LIVE Ethereum Sepolia. Zero mock data. Re-runnable (delta asserts).
 // Flow: wrap -> decrypt -> private send -> recipient decrypt -> auditor addViewer ->
 //       claim-link (operator-pull createLink) -> claim -> reclaim -> 2-step unwrap.
 import { ethers } from 'ethers';

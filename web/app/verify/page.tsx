@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { Contract, JsonRpcProvider, Interface } from 'ethers';
 import { ABIS, CONTRACTS, NETWORK, shortAddr } from '@/lib/contracts';
-import { describeHandle, isHandle } from '@noxsend/core';
+import { describeHandle, isHandle } from '@noxconnect/core';
 import { explorerAddr, explorerTx } from '@/hooks/useNox';
 
 interface Evt { kind: string; tx: string; block: number; detail: string; }
@@ -206,11 +206,11 @@ function Bench() {
 
 function Reproduce() {
   const cmds = [
-    'git clone <repo> && cd noxsend && npm install',
+    'git clone <repo> && cd noxconnect && npm install',
     'cp .env.example .env   # add a funded Sepolia key',
     'npm run compile && npm run deploy',
     'npm run e2e            # full wrap→send→decrypt→claim→unwrap on live Sepolia',
-    'npm test               # 122 @noxsend/core unit tests (all green)',
+    'npm test               # 122 @noxconnect/core unit tests (all green)',
   ];
   return (
     <div className="glass p-6">

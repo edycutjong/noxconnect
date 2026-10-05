@@ -1,4 +1,4 @@
-// Coverage gate for NoxSend's OWN Solidity contracts.
+// Coverage gate for NoxConnect's OWN Solidity contracts.
 //
 // Parses solidity-coverage's Istanbul output (coverage.json at repo root) and FAILS (exit 1) if any
 // of the project's own contracts is below 100% on ANY metric (statements / branches / functions /

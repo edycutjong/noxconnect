@@ -1,6 +1,6 @@
-# NoxSend — SDK / Protocol Feedback for iExec Nox
+# NoxConnect — SDK / Protocol Feedback for iExec Nox
 
-Findings while building NoxSend (real deploy on Ethereum Sepolia) against
+Findings while building NoxConnect (real deploy on Ethereum Sepolia) against
 `@iexec-nox/handle@0.1.0-beta.13`, `@iexec-nox/nox-confidential-contracts@0.2.2`,
 `@iexec-nox/nox-protocol-contracts@0.2.4`. Every item is something we actually hit; the
 repros are copy-pasteable. Dated during the build (2026-07-11 → 2026-07-12).
@@ -126,7 +126,7 @@ helper would materially improve DX.
 
 ### 15. 🟢 Handles are self-describing (chainId + type + uniqueness in the header)
 **2026-07-12.** Being able to read `chainId`, solidity type, and the "unique" attribute straight out of
-the 32-byte handle (we reimplemented this in `@noxsend/core/handles`) is very handy for client-side
+the 32-byte handle (we reimplemented this in `@noxconnect/core/handles`) is very handy for client-side
 validation before a call. Consider exporting these decoders from the SDK.
 
 ---

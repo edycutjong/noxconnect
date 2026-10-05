@@ -1,5 +1,5 @@
 {
-  "name": "@noxsend/core",
+  "name": "@noxconnect/core",
   "version": "1.0.0",
   "description": "Add private-send to any dApp in ~10 lines \u2014 a typed layer over @iexec-nox/handle + ERC-7984 confidential tokens on iExec Nox.",
   "license": "MIT",

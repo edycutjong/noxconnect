@@ -1,4 +1,4 @@
-# Architecture — NoxSend (as built)
+# Architecture — NoxConnect (as built)
 
 ## Stack
 Next.js 14 (App Router) · wagmi v2 injected connector (MetaMask/Rabby, unmodified) · ethers v6 for

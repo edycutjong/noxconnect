@@ -6,7 +6,7 @@
 | latest (`main`) | ✅ |
 
 ## Scope & Threat Model
-NoxSend is a hackathon project running on **Ethereum Sepolia only**, with
+NoxConnect is a hackathon project running on **Ethereum Sepolia only**, with
 **throwaway keys**. It provides *amount privacy* for confidential cUSD transfers;
 sender/recipient addresses and wrap/unwrap amounts are public by design (see the
 "Honest limitations" section of the README and `ARCHITECTURE.md`).

@@ -51,7 +51,7 @@ jobs:
         run: npm ci
       - name: Compile contracts (solc auto-download)
         run: npm run compile
-      - name: Core unit tests (vitest — @noxsend/core)
+      - name: Core unit tests (vitest — @noxconnect/core)
         run: npm test
       - name: Hardhat contract tests
         run: npm run test:contracts

@@ -14,8 +14,8 @@ const nextConfig = {
   async rewrites() {
     return [{ source: '/pitch', destination: '/pitch.html' }];
   },
-  // @noxsend/core is a TS workspace package consumed from source.
-  transpilePackages: ['@noxsend/core'],
+  // @noxconnect/core is a TS workspace package consumed from source.
+  transpilePackages: ['@noxconnect/core'],
   webpack: (config) => {
     config.externals.push('pino-pretty', 'lokijs', 'encoding');
     // Optional RN-only dep pulled by the MetaMask SDK; not needed on web.
@@ -23,7 +23,7 @@ const nextConfig = {
       ...config.resolve.alias,
       '@react-native-async-storage/async-storage': false,
     };
-    // Resolve @noxsend/core's ESM-style ".js" imports to their ".ts" sources.
+    // Resolve @noxconnect/core's ESM-style ".js" imports to their ".ts" sources.
     config.resolve.extensionAlias = {
       '.js': ['.ts', '.tsx', '.js'],
       '.mjs': ['.mts', '.mjs'],

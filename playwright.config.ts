@@ -1,7 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
 /**
- * NoxSend is an npm-workspaces monorepo; the dApp lives in `web/`.
+ * NoxConnect is an npm-workspaces monorepo; the dApp lives in `web/`.
  * These E2E tests run in DEMO MODE — no wallet, no env vars. They verify
  * what a first-time visitor sees before connecting (sealed pills, connect
  * prompts, meta tags, responsive layout) — never on-chain actions.

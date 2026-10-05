@@ -36,7 +36,7 @@ const gi = read('.gitignore') || '';
 check(/^\.env$/m.test(gi), '.env is gitignored');
 
 // Core tests present
-check(existsSync(join(ROOT, 'packages/core/tests')), '@noxsend/core tests present');
+check(existsSync(join(ROOT, 'packages/core/tests')), '@noxconnect/core tests present');
 
 // Fixtures
 check(existsSync(join(ROOT, 'fixtures/demo-state.json')), 'fixtures/demo-state.json present', 'run npm run seed');

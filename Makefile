@@ -1,10 +1,10 @@
 .PHONY: help install compile test test-contracts ci build web dev e2e-web lighthouse security-scan
 
 help:
-	@echo "NoxSend — make targets"
+	@echo "NoxConnect — make targets"
 	@echo "  make install         Install workspace dependencies"
 	@echo "  make compile         Compile contracts (solc auto-download)"
-	@echo "  make test            @noxsend/core unit tests (vitest)"
+	@echo "  make test            @noxconnect/core unit tests (vitest)"
 	@echo "  make test-contracts  Hardhat contract tests"
 	@echo "  make ci              lint + typecheck + all tests"
 	@echo "  make build           Production build of the web dApp"

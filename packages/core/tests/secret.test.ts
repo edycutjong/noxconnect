@@ -21,12 +21,12 @@ describe('secretHash', () => {
 
 describe('buildClaimLink / parseClaimLink', () => {
   const secret = '0x' + 'ab'.repeat(32);
-  it('builds a /claim#secret url', () => expect(buildClaimLink('https://noxsend.app', secret)).toBe(`https://noxsend.app/claim#${secret}`));
-  it('strips a trailing slash', () => expect(buildClaimLink('https://noxsend.app/', secret)).toBe(`https://noxsend.app/claim#${secret}`));
-  it('strips an existing fragment', () => expect(buildClaimLink('https://noxsend.app#old', secret)).toBe(`https://noxsend.app/claim#${secret}`));
+  it('builds a /claim#secret url', () => expect(buildClaimLink('https://noxconnect.app', secret)).toBe(`https://noxconnect.app/claim#${secret}`));
+  it('strips a trailing slash', () => expect(buildClaimLink('https://noxconnect.app/', secret)).toBe(`https://noxconnect.app/claim#${secret}`));
+  it('strips an existing fragment', () => expect(buildClaimLink('https://noxconnect.app#old', secret)).toBe(`https://noxconnect.app/claim#${secret}`));
   it('rejects a bad secret', () => expect(() => buildClaimLink('https://x', '0x00')).toThrow());
 
-  it('parses the secret back from a link', () => expect(parseClaimLink(buildClaimLink('https://noxsend.app', secret))).toBe(secret));
+  it('parses the secret back from a link', () => expect(parseClaimLink(buildClaimLink('https://noxconnect.app', secret))).toBe(secret));
   it('parses a fragment without 0x prefix', () => expect(parseClaimLink('https://x/claim#' + 'cd'.repeat(32))).toBe('0x' + 'cd'.repeat(32)));
   it('lowercases the parsed secret', () => expect(parseClaimLink('https://x/claim#0x' + 'AB'.repeat(32))).toBe('0x' + 'ab'.repeat(32)));
   it('returns null when no fragment', () => expect(parseClaimLink('https://x/claim')).toBeNull());

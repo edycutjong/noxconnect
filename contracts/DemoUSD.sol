@@ -25,7 +25,7 @@ contract DemoUSD is ERC20 {
         return _DECIMALS;
     }
 
-    /// @notice Anyone can mint themselves 1,000 dUSD to try NoxSend.
+    /// @notice Anyone can mint themselves 1,000 dUSD to try NoxConnect.
     function faucet() external {
         _mint(msg.sender, FAUCET_AMOUNT);
     }

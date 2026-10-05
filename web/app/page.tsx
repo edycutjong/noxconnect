@@ -1,7 +1,7 @@
 'use client';
 
 /*
-  NoxSend landing — "Cipher Noir".
+  NoxConnect landing — "Cipher Noir".
   Design: editorial display scale + one signature interactive moment (CipherCard:
   a real amount scrambling into a 32-byte handle behind a lock, PUBLIC/YOU toggle).
   All on-chain logic lives in useNox / lib — untouched by this presentational layer.
@@ -14,7 +14,7 @@ import { SealedAmount, LockIcon } from '@/components/SealedAmount';
 import { ConnectButton } from '@/components/ConnectButton';
 import { shortAddr } from '@/lib/contracts';
 
-const GITHUB_URL = 'https://github.com/edycutjong/noxsend';
+const GITHUB_URL = 'https://github.com/edycutjong/noxconnect';
 const CUSD_ADDRESS = '0x82C281D7403e44d61968c2F49751a56877468991';
 const CUSD_ETHERSCAN = `https://sepolia.etherscan.io/address/${CUSD_ADDRESS}`;
 
@@ -309,7 +309,7 @@ function RealSection() {
 
 function Faq() {
   const items = [
-    { q: 'Do I need a new wallet or a new chain?', a: 'No. NoxSend uses the MetaMask or Rabby you already have, and the USDC you already hold — neither is modified. It runs on Ethereum Sepolia via the wagmi injected connector.' },
+    { q: 'Do I need a new wallet or a new chain?', a: 'No. NoxConnect uses the MetaMask or Rabby you already have, and the USDC you already hold — neither is modified. It runs on Ethereum Sepolia via the wagmi injected connector.' },
     { q: 'Is the amount really hidden?', a: 'Yes. The amount is encrypted by the Nox Handle Gateway inside Intel TDX before it ever touches the chain — the transaction calldata carries only a 32-byte handle, not the value. Etherscan sees 32 bytes.' },
     { q: 'Is this a mock or a demo stub?', a: 'No. It is live on Ethereum Sepolia against the real Nox Handle Gateway, zero mock data. Wrap, private send, auditor grant, claim-link and unwrap each have a real proof transaction — open /verify to watch events stream live.' },
     { q: 'Who can see my balance and transfers?', a: 'Only you, by default. Decryption is a viewer-gated, EIP-712-signed request to the Nox TEE gateway. The recipient can decrypt via the viewer ACL, and you can grant an auditor with a single addViewer call — no one else can read it.' },
@@ -509,7 +509,7 @@ function DisclosureCard({ run }: { run: (l: string, f: () => Promise<void>) => P
       </div>
       <p className="mt-3 text-xs text-amber-300/80">
         Note: viewer grants let one address decrypt this handle. Admin-level grants are irrevocable by
-        design (revocation would be false security) — NoxSend grants decrypt-only viewers here.
+        design (revocation would be false security) — NoxConnect grants decrypt-only viewers here.
       </p>
     </div>
   );

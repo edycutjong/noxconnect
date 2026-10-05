@@ -11,7 +11,7 @@ test.describe("Demo mode — home", () => {
     await page.goto("/");
 
     // Brand + hero copy render.
-    await expect(page.getByRole("link", { name: "NoxSend" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "NoxConnect" })).toBeVisible();
     await expect(page.getByRole("heading", { level: 1 })).toContainText("32 bytes");
     await expect(page.getByText("Private send for the wallet you already have")).toBeVisible();
 
@@ -24,7 +24,7 @@ test.describe("Demo mode — home", () => {
   test("has correct SEO / social meta tags", async ({ page }) => {
     await page.goto("/");
 
-    await expect(page).toHaveTitle(/NoxSend/);
+    await expect(page).toHaveTitle(/NoxConnect/);
 
     const description = await page
       .locator('meta[name="description"]')

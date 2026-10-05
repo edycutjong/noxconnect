@@ -1,4 +1,4 @@
-// Minimal human-readable ABIs for the NoxSend contracts + the Nox protocol ACL surface.
+// Minimal human-readable ABIs for the NoxConnect contracts + the Nox protocol ACL surface.
 // Encrypted types (euint256 / externalEuint256 / ebool) are bytes32 on the wire.
 
 export const CONFIDENTIAL_USD_ABI = [

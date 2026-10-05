@@ -35,7 +35,7 @@ export function getNetwork(chainId: number): NoxNetwork {
   return n;
 }
 
-export interface NoxSendContracts {
+export interface NoxConnectContracts {
   /** Confidential wrapper token (cUSD). */
   confidentialUSD: string;
   /** Claim-link escrow. */
@@ -44,9 +44,9 @@ export interface NoxSendContracts {
   underlying: string;
 }
 
-export interface NoxSendConfig {
+export interface NoxConnectConfig {
   network: NoxNetwork;
-  contracts: NoxSendContracts;
+  contracts: NoxConnectContracts;
 }
 
 export function explorerTx(net: NoxNetwork, hash: string): string {

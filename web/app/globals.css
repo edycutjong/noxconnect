@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /*
-  NoxSend — "Cipher Noir" design system
+  NoxConnect — "Cipher Noir" design system
   Aesthetic: high-contrast dark, editorial display scale, hairline geometry,
   one signature motion (the cipher seal). Teal→violet brand kept but sharpened.
   Fonts loaded via next/font in layout.tsx → --font-display / --font-body.

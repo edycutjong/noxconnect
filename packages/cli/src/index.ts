@@ -1,5 +1,5 @@
 #!/usr/bin/env -S npx tsx
-// noxsend — drive the whole NoxSend flow headless, over @noxsend/core.
+// noxconnect — drive the whole NoxConnect flow headless, over @noxconnect/core.
 // Usage: npx tsx packages/cli/src/index.ts <command> [args]   (or: npm run cli -- <command>)
 import 'dotenv/config';
 import { readFileSync } from 'node:fs';
@@ -7,14 +7,14 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { JsonRpcProvider, Wallet } from 'ethers';
 import { createEthersHandleClient } from '@iexec-nox/handle';
-import { NoxSendClient, SEPOLIA, formatDisplay, type NoxSendConfig, type HandleClientLike } from '@noxsend/core';
+import { NoxConnectClient, SEPOLIA, formatDisplay, type NoxConnectConfig, type HandleClientLike } from '@noxconnect/core';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..', '..', '..');
 const RPC = process.env.SEPOLIA_RPC_URL || SEPOLIA.rpcUrl;
 const rawPk = process.env.DEPLOYER_PRIVATE_KEY || process.env.PRIVATE_KEY || '';
 const PK = rawPk.startsWith('0x') ? rawPk : rawPk ? '0x' + rawPk : '';
 
-function loadConfig(): NoxSendConfig {
+function loadConfig(): NoxConnectConfig {
   const d = JSON.parse(readFileSync(join(ROOT, 'deployments.json'), 'utf8'));
   return {
     network: SEPOLIA,
@@ -26,17 +26,17 @@ function loadConfig(): NoxSendConfig {
   };
 }
 
-async function makeClient(): Promise<NoxSendClient> {
+async function makeClient(): Promise<NoxConnectClient> {
   if (!PK) throw new Error('Set DEPLOYER_PRIVATE_KEY (or PRIVATE_KEY) in .env');
   const provider = new JsonRpcProvider(RPC, 11155111, { staticNetwork: true });
   const wallet = new Wallet(PK, provider);
   const handle = (await createEthersHandleClient(wallet)) as unknown as HandleClientLike;
-  return new NoxSendClient(wallet, handle, loadConfig());
+  return new NoxConnectClient(wallet, handle, loadConfig());
 }
 
 const fmt = (v: bigint) => formatDisplay(v, 'cUSD');
 
-const HELP = `noxsend — private send over iExec Nox (Sepolia)
+const HELP = `noxconnect — private send over iExec Nox (Sepolia)
 
   balance [address]         decrypt a confidential cUSD balance (free)
   wrap <amount>             wrap underlying ERC-20 -> cUSD
@@ -70,7 +70,7 @@ async function main() {
       break;
     }
     case 'link': {
-      const r = await nox.createClaimLink(args[0], { baseUrl: process.env.APP_URL || 'https://noxsend.app' });
+      const r = await nox.createClaimLink(args[0], { baseUrl: process.env.APP_URL || 'https://noxconnect.app' });
       console.log('link  ', r.link);
       console.log('secret', r.secret);
       console.log('tx    ', r.txHash);

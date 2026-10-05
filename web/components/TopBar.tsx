@@ -17,7 +17,7 @@ export function TopBar() {
       <div className="flex items-center gap-6">
         <Link href="/" className="flex items-center gap-2">
           <LockPlane />
-          <span className="font-display text-xl font-bold tracking-tight brand-gradient">NoxSend</span>
+          <span className="font-display text-xl font-bold tracking-tight brand-gradient">NoxConnect</span>
         </Link>
         <nav className="hidden items-center gap-1 sm:flex">
           {NAV.map((n) => {

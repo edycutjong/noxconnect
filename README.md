@@ -1,14 +1,14 @@
 <div align="center">
-  <img src="docs/icon-animated.svg" alt="NoxSend Logo" width="144">
-  <h1>NoxSend 🔒</h1>
+  <img src="docs/icon-animated.svg" alt="NoxConnect Logo" width="144">
+  <h1>NoxConnect 🔒</h1>
   <p><em>Private send for the wallet you already have.</em></p>
-  <img src="docs/readme-hero-animated.svg" alt="NoxSend Hero" width="100%">
+  <img src="docs/readme-hero-animated.svg" alt="NoxConnect Hero" width="100%">
 
   <br/>
 
   [![Demo Video](https://img.shields.io/badge/▶_Demo-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/_Vd4jYN2zvo)
-  [![Live Demo](https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge)](https://noxsend.edycu.dev)
-  [![Pitch Deck](https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge)](https://noxsend.edycu.dev/pitch)
+  [![Live Demo](https://img.shields.io/badge/🚀_Live-Demo-06b6d4?style=for-the-badge)](https://noxconnect.edycu.dev)
+  [![Pitch Deck](https://img.shields.io/badge/📊_Pitch-Deck-f59e0b?style=for-the-badge)](https://noxconnect.edycu.dev/pitch)
   [![WTF!! Hackathon](https://img.shields.io/badge/WTF!!_Hackathon-iExec_Nox-8b5cf6?style=for-the-badge)](https://dorahacks.io/hackathon/wtf-hackathon)
   [![DoraHacks BUIDL](https://img.shields.io/badge/DoraHacks-BUIDL_47258-5b21b6?style=for-the-badge&logo=dora&logoColor=white)](https://dorahacks.io/buidl/47258)
   [![Verified Contract](https://img.shields.io/badge/🔍_Verified-Contract-21325b?style=for-the-badge&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io/address/0x82C281D7403e44d61968c2F49751a56877468991)
@@ -20,10 +20,10 @@
   [![Ethereum Sepolia](https://img.shields.io/badge/Ethereum_Sepolia-627EEA?style=flat&logo=ethereum&logoColor=white)](https://sepolia.etherscan.io)
   [![wagmi v2](https://img.shields.io/badge/wagmi-v2-1C1B1B?style=flat)](https://wagmi.sh)
   [![ERC-7984](https://img.shields.io/badge/ERC--7984-Confidential_Token-7c3aed?style=flat)](https://eips.ethereum.org/EIPS/eip-7984)
-  [![Tests](https://img.shields.io/badge/tests-148_passing-3fb950?style=flat)](https://github.com/edycutjong/noxsend/actions/workflows/ci.yml)
-  [![Coverage](https://img.shields.io/badge/contracts_coverage-100%25-3fb950?style=flat)](https://github.com/edycutjong/noxsend/actions/workflows/ci.yml)
+  [![Tests](https://img.shields.io/badge/tests-148_passing-3fb950?style=flat)](https://github.com/edycutjong/noxconnect/actions/workflows/ci.yml)
+  [![Coverage](https://img.shields.io/badge/contracts_coverage-100%25-3fb950?style=flat)](https://github.com/edycutjong/noxconnect/actions/workflows/ci.yml)
   [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)](https://opensource.org/licenses/MIT)
-  [![CI](https://github.com/edycutjong/noxsend/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/noxsend/actions/workflows/ci.yml)
+  [![CI](https://github.com/edycutjong/noxconnect/actions/workflows/ci.yml/badge.svg)](https://github.com/edycutjong/noxconnect/actions/workflows/ci.yml)
 
   <br/>
 
@@ -32,15 +32,15 @@
 </div>
 
 <div align="center">
-  <img src="docs/screenshots/hero.png" alt="NoxSend — private send, live on Ethereum Sepolia" width="100%">
-  <p><sub>The live app at <a href="https://noxsend.edycu.dev">noxsend.edycu.dev</a> — the amount is a 32-byte handle, decryptable only by whom you choose.</sub></p>
+  <img src="docs/screenshots/hero.png" alt="NoxConnect — private send, live on Ethereum Sepolia" width="100%">
+  <p><sub>The live app at <a href="https://noxconnect.edycu.dev">noxconnect.edycu.dev</a> — the amount is a 32-byte handle, decryptable only by whom you choose.</sub></p>
 </div>
 
 <div align="center">
 <table>
 <tr>
-<td width="50%"><img src="docs/screenshots/flow.png" alt="NoxSend — the one flow and live proof stats"><br><sub>The one flow — wrap → private send → reveal, with live proof stats.</sub></td>
-<td width="50%"><img src="docs/screenshots/verify.png" alt="NoxSend — /verify dashboard"><br><sub><code>/verify</code> — live Sepolia event stream + ACL inspector, zero mock.</sub></td>
+<td width="50%"><img src="docs/screenshots/flow.png" alt="NoxConnect — the one flow and live proof stats"><br><sub>The one flow — wrap → private send → reveal, with live proof stats.</sub></td>
+<td width="50%"><img src="docs/screenshots/verify.png" alt="NoxConnect — /verify dashboard"><br><sub><code>/verify</code> — live Sepolia event stream + ACL inspector, zero mock.</sub></td>
 </tr>
 </table>
 </div>
@@ -53,7 +53,7 @@
 naked forever. The usual "privacy" answers force a new chain, a mixer with regulatory stigma, or a
 new wallet. Normal people won't switch wallets to get what banks give them by default.
 
-**The approach.** NoxSend adds a private-send flow to the wallet you *already* use, on the token you
+**The approach.** NoxConnect adds a private-send flow to the wallet you *already* use, on the token you
 *already* hold — **without modifying either**. Wrap USDC into confidential **cUSD** (ERC-7984, 1:1,
 redeemable), send with the amount **encrypted end-to-end inside Intel TDX** via iExec Nox, and reveal
 it to exactly whom you choose: the recipient (viewer ACL), an auditor *if you say so* (`addViewer`),
@@ -91,7 +91,7 @@ Proof transactions — **one unified `npm run e2e` run** (all steps, single pass
 ## 🚀 Quickstart (~5 minutes)
 
 ```bash
-git clone <this-repo> noxsend && cd noxsend
+git clone <this-repo> noxconnect && cd noxconnect
 npm install
 
 cp .env.example .env
@@ -102,7 +102,7 @@ npm run compile         # solc 0.8.35 (auto-downloaded)
 npm run gateway-smoke   # proves the Nox gateway works with just your key (no signup)
 npm run deploy          # DemoUSD + cUSD + SendLinkEscrow -> Sepolia; writes deployments.json
 npm run e2e             # full wrap→send→decrypt→auditor→claim→reclaim→unwrap, live, zero mock
-npm test                # 122 @noxsend/core unit tests (all green)
+npm test                # 122 @noxconnect/core unit tests (all green)
 npm run test:contracts  # 26 Hardhat contract tests (DemoUSD + ConfidentialUSD + SendLinkEscrow)
 npm run coverage:check  # solidity-coverage + gate: 100% on all metrics for own contracts/
 
@@ -140,7 +140,7 @@ Deployed contract addresses for this app (cUSD wrapper, SendLinkEscrow, DemoUSD 
 
 ## 🧪 Tests & benchmark
 
-- **148 tests, all green** — 122 `@noxsend/core` unit tests (amounts · handle decoding · claim-link
+- **148 tests, all green** — 122 `@noxconnect/core` unit tests (amounts · handle decoding · claim-link
   secrets · the full ACL role matrix · config) via `npm test`, plus 26 Hardhat contract tests
   (`npm run test:contracts`) covering DemoUSD, ConfidentialUSD, and the full SendLinkEscrow state
   machine (create · claim · reclaim + every revert path).
@@ -153,14 +153,14 @@ Deployed contract addresses for this app (cUSD wrapper, SendLinkEscrow, DemoUSD 
 
 ## 🛠️ Engineering & CI
 
-Beyond the live proof, NoxSend ships a full engineering harness so judges can see
+Beyond the live proof, NoxConnect ships a full engineering harness so judges can see
 this is a real product, not a weekend toy.
 
 ```bash
 # ── Quality ─────────────────────────────────
 npm run lint            # next lint (web/)
 npm run typecheck       # tsc --noEmit (web/)
-npm test                # 122 @noxsend/core unit tests (vitest)
+npm test                # 122 @noxconnect/core unit tests (vitest)
 npm run test:contracts  # 26 Hardhat contract tests
 npm run coverage:check  # solidity-coverage + 100%-or-fail gate on own contracts/
 npm run ci              # lint + typecheck + all tests
@@ -177,7 +177,7 @@ make security-scan    # npm audit + license check
 | Layer | Tool | Status |
 |---|---|---|
 | Code Quality | ESLint (`next lint`) + TypeScript strict | ✅ |
-| Unit Testing | Vitest — 122 `@noxsend/core` tests | ✅ |
+| Unit Testing | Vitest — 122 `@noxconnect/core` tests | ✅ |
 | Contract Testing | Hardhat — 26 tests, 100% coverage all metrics (solidity-coverage, gated) | ✅ |
 | Live E2E (on-chain) | `npm run e2e` — full flow on Sepolia | ✅ |
 | UI E2E | Playwright — 3 suites (demo mode), `npm run e2e:web` | ✅ |
@@ -193,15 +193,15 @@ contracts, in parallel) → Security → Build → E2E → Performance → Deplo
 
 - **Contracts** (`contracts/`) — thin, protocol unmodified: `ConfidentialUSD` is a 4-line
   `ERC20ToERC7984Wrapper`; `SendLinkEscrow` is an operator-pull claim escrow.
-- **`@noxsend/core`** (`packages/core/`) — *add private-send to any dApp in ~10 lines*, a typed layer
-  over `@iexec-nox/handle` + ERC-7984. Pure helpers are fully unit-tested; `NoxSendClient` is the
+- **`@noxconnect/core`** (`packages/core/`) — *add private-send to any dApp in ~10 lines*, a typed layer
+  over `@iexec-nox/handle` + ERC-7984. Pure helpers are fully unit-tested; `NoxConnectClient` is the
   Node/CLI surface.
 - **`web/`** — Next.js 14 App Router, **wagmi injected connector** (MetaMask/Rabby untouched), styled
   to the synthwave theme. `/verify` streams live Sepolia events + a live ACL inspector — zero mock.
 
 ```ts
-import { NoxSendClient } from '@noxsend/core';
-const nox = new NoxSendClient(signer, handleClient, config);
+import { NoxConnectClient } from '@noxconnect/core';
+const nox = new NoxConnectClient(signer, handleClient, config);
 await nox.wrap('5000');                        // USDC -> cUSD
 await nox.sendPrivate('0xLandlord', '1850');   // encrypted amount; calldata = a 32-byte handle
 await nox.decryptBalance();                    // only the owner/viewers can
@@ -229,7 +229,7 @@ and a disclosure registry — four systems, none composable with the USDC alread
 
 ## 🗺️ Roadmap (designed, not shipped)
 
-The shipped scope is the **core flow with depth** + the reusable `@noxsend/core` + CLI + dApp.
+The shipped scope is the **core flow with depth** + the reusable `@noxconnect/core` + CLI + dApp.
 Designed and specced but intentionally *not* in this build (each additive, none blocking the
 zero-mock core): ENS send/request · confidential batch send · a `ProofOfReceipt` "received ≥ $X"
 receipt (`Nox.le` + `select` + `allowPublicDecryption`) · opt-in time-bound standing orders
@@ -242,6 +242,6 @@ surface and are the natural next increments.
 
 ## 📢 Disclosure
 
-100% built during the WTF!! Hackathon (iExec Nox). A shared Nox-integration core (`@noxsend/core`) is
+100% built during the WTF!! Hackathon (iExec Nox). A shared Nox-integration core (`@noxconnect/core`) is
 designed to be reused by sibling entries. Nothing reused from the Vibe Coding edition. Throwaway keys
 only, Sepolia only, never mainnet.

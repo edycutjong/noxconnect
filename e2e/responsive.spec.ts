@@ -31,7 +31,7 @@ for (const vp of VIEWPORTS) {
     test("brand and hero render within the viewport", async ({ page }) => {
       await page.goto("/");
 
-      const brand = page.getByRole("link", { name: "NoxSend" });
+      const brand = page.getByRole("link", { name: "NoxConnect" });
       await expect(brand).toBeVisible();
       const box = await brand.boundingBox();
       expect(box).not.toBeNull();

@@ -1,8 +1,8 @@
 # Contributing
 
-Thanks for your interest in improving NoxSend! 🎉
+Thanks for your interest in improving NoxConnect! 🎉
 
-NoxSend is an npm-workspaces monorepo: Hardhat contracts, the `@noxsend/core`
+NoxConnect is an npm-workspaces monorepo: Hardhat contracts, the `@noxconnect/core`
 SDK, and a CLI live at the repo root; the Next.js dApp lives in `web/`.
 
 ## Getting Started

@@ -1,4 +1,4 @@
-# DEMO — NoxSend (exact steps + expected outputs)
+# DEMO — NoxConnect (exact steps + expected outputs)
 
 Two ways to see it: (A) the headless live proof (fastest, undeniable), (B) the dApp.
 
@@ -47,7 +47,7 @@ ALL STEPS GREEN.
    an **ACL inspector** (paste a handle → `isViewer`/`isAllowed`/type/chainId), and the latency bench.
 
 ## The one devastating query
-Open two Etherscan tabs: a plain USDC `transfer` (amount in cleartext, forever) vs this real NoxSend
+Open two Etherscan tabs: a plain USDC `transfer` (amount in cleartext, forever) vs this real NoxConnect
 [`confidentialTransfer`](https://sepolia.etherscan.io/tx/0xb03d69a2709e0095572659bdaa0c103c551b1dc2d80c13acdaf39a9ac84bcf1c)
 (calldata = a single 32-byte handle, no amount). "Read me the amount." You can't — and the e2e
 *asserts* it: `expect(!tx.data.includes("1850e6"))` fails the whole run if the plaintext ever leaks
@@ -57,7 +57,7 @@ Open two Etherscan tabs: a plain USDC `transfer` (amount in cleartext, forever) 
 
 | Time | Beat | On screen | Say |
 |---|---|---|---|
-| **0:00–0:25** | **★ THE MAGIC MOMENT** | Two Etherscan tabs side by side: a normal USDC `transfer` (amount `1,850`, cleartext) vs the NoxSend [`confidentialTransfer`](https://sepolia.etherscan.io/tx/0xb03d69a2709e0095572659bdaa0c103c551b1dc2d80c13acdaf39a9ac84bcf1c) (calldata = one 32-byte handle) | "Left: a rent payment, public forever. Right: the same payment through NoxSend. **Read me the amount on the right. You can't.**" |
+| **0:00–0:25** | **★ THE MAGIC MOMENT** | Two Etherscan tabs side by side: a normal USDC `transfer` (amount `1,850`, cleartext) vs the NoxConnect [`confidentialTransfer`](https://sepolia.etherscan.io/tx/0xb03d69a2709e0095572659bdaa0c103c551b1dc2d80c13acdaf39a9ac84bcf1c) (calldata = one 32-byte handle) | "Left: a rent payment, public forever. Right: the same payment through NoxConnect. **Read me the amount on the right. You can't.**" |
 | 0:25–1:00 | Connect + wrap | Real MetaMask connects on Sepolia; wrap 5,000 dUSD → cUSD; tx hash on screen | "Same wallet, nothing installed. USDC wrapped 1:1 into confidential cUSD." |
 | 1:00–1:45 | Private send | Enter Landlord + `1850` → **Send privately**; open the tx on Etherscan live; point at the handle in calldata | "The amount is encrypted inside Intel TDX. Etherscan sees 32 bytes." |
 | 1:45–2:20 | Decrypt + selective disclosure | Landlord signs → balance unseals *for them only*; **Grant auditor** on ONE payment; `/verify` ACL panel shows `isViewer(auditor)=true`, stranger `false` | "The recipient decrypts. An auditor — only if you say so. No one else." |

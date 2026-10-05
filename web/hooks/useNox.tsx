@@ -3,8 +3,8 @@
 import { createContext, useCallback, useContext, useMemo, useRef, useState, type ReactNode } from 'react';
 import { useAccount, useConnectorClient } from 'wagmi';
 import type { Eip1193Provider } from 'ethers';
-import type { NoxSendClient } from '@noxsend/core';
-import { formatDisplay } from '@noxsend/core';
+import type { NoxConnectClient } from '@noxconnect/core';
+import { formatDisplay } from '@noxconnect/core';
 import { makeNoxClient } from '@/lib/nox';
 import { NETWORK } from '@/lib/contracts';
 
@@ -13,7 +13,7 @@ export interface TxItem { label: string; hash: string; ts: number; }
 interface NoxState {
   address?: string;
   connected: boolean;
-  client: () => Promise<NoxSendClient>;
+  client: () => Promise<NoxConnectClient>;
   balance: bigint | null; // decrypted, or null if sealed/unknown
   balanceLoading: boolean;
   refreshBalance: () => Promise<void>;
@@ -30,7 +30,7 @@ const Ctx = createContext<NoxState | null>(null);
 export function NoxProvider({ children }: { children: ReactNode }) {
   const { address, isConnected, connector } = useAccount();
   const { data: connectorClient } = useConnectorClient();
-  const clientRef = useRef<NoxSendClient | null>(null);
+  const clientRef = useRef<NoxConnectClient | null>(null);
   const [balance, setBalance] = useState<bigint | null>(null);
   const [balanceLoading, setBalanceLoading] = useState(false);
   const [txs, setTxs] = useState<TxItem[]>([]);

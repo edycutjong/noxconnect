@@ -1,6 +1,6 @@
-# NoxSend — Contracts
+# NoxConnect — Contracts
 
-Solidity sources for NoxSend, compiled with **solc 0.8.35** via Hardhat. Privacy is layered on
+Solidity sources for NoxConnect, compiled with **solc 0.8.35** via Hardhat. Privacy is layered on
 **unmodified** ERC-20s using the audited [iExec Nox](https://docs.iex.ec) confidential-token library
 (`@iexec-nox/nox-confidential-contracts`, `@iexec-nox/nox-protocol-contracts`) — the protocol itself is
 never touched.
@@ -42,7 +42,7 @@ Escrow that lets a sender fund a link redeemable by a wallet-less recipient with
   under `keccak256(secret)` with `Nox.allowThis`.
   > Why pull, not push: in this SDK an `IERC7984Receiver` hook is **not** granted ACL over the pushed
   > handle, so a push-funded escrow can't persist funds (`Nox.allowThis` reverts `UnauthorizedSender`).
-  > See `../docs/feedback.md`. Direct NoxSend sends still take **zero** operator authority.
+  > See `../docs/feedback.md`. Direct NoxConnect sends still take **zero** operator authority.
 - `claim(secret, to)` — anyone with the secret redeems the encrypted amount; `addViewer(amount, to)` lets
   the claimee decrypt exactly what they received.
 - `reclaim(secretHash)` — after `expiry` (plaintext, public by design), the original sender refunds.

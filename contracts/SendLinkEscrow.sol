@@ -19,7 +19,7 @@ import {IERC7984} from "@iexec-nox/nox-confidential-contracts/contracts/interfac
  * the amount (`Nox.allowThis` reverts with `UnauthorizedSender`). See feedback.md.
  *
  * The operator grant is time-bound (set `until` = the link expiry) and one-tap revocable
- * (`cUSD.setOperator(escrow, 0)`); direct NoxSend sends still take zero operator authority.
+ * (`cUSD.setOperator(escrow, 0)`); direct NoxConnect sends still take zero operator authority.
  *
  * - `claim(secret, to)`   — anyone with the secret redeems the encrypted amount to `to`.
  * - `reclaim(secretHash)` — after expiry, the original sender refunds themselves.

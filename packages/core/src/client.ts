@@ -1,9 +1,9 @@
-// NoxSendClient — the "add private send in ~10 lines" surface over @iexec-nox/handle + ethers.
+// NoxConnectClient — the "add private send in ~10 lines" surface over @iexec-nox/handle + ethers.
 // Framework-agnostic (Node/CLI). The Next.js dApp calls these same ethers-based helpers via
 // web/lib/nox.ts; both share amounts/handles/secret/acl/abis from this package.
 import { Contract, ZeroHash, keccak256, getBytes, AbiCoder, type Signer } from 'ethers';
 import { CONFIDENTIAL_USD_ABI, DEMO_USD_ABI, SEND_LINK_ESCROW_ABI, NOX_PROTOCOL_ABI } from './abis.js';
-import type { NoxSendConfig } from './config.js';
+import type { NoxConnectConfig } from './config.js';
 import { toBaseUnits } from './amounts.js';
 import { generateSecret, secretHash as hashSecret, buildClaimLink, expiryFromNow } from './secret.js';
 
@@ -37,16 +37,16 @@ export interface ClaimLinkResult {
   txHash: string;
 }
 
-export class NoxSendClient {
+export class NoxConnectClient {
   readonly signer: Signer;
   readonly handle: HandleClientLike;
-  readonly config: NoxSendConfig;
+  readonly config: NoxConnectConfig;
   readonly cUSD: Contract;
   readonly escrow: Contract;
   readonly underlying: Contract;
   readonly nox: Contract;
 
-  constructor(signer: Signer, handle: HandleClientLike, config: NoxSendConfig) {
+  constructor(signer: Signer, handle: HandleClientLike, config: NoxConnectConfig) {
     this.signer = signer;
     this.handle = handle;
     this.config = config;
